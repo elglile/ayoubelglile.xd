@@ -1,0 +1,44 @@
+/* Chrome, Edge, and Safari */
+html::-webkit-scrollbar {
+  @apply w-[10px]
+}
+html::-webkit-scrollbar-thumb {
+  @apply bg-Tird_Color border-8  border-slate-500 rounded-lg
+  }
+  
+  html::-webkit-scrollbar-track {
+    @apply bg-transparent rounded-lg
+  }
+  
+  /* /(Chrome, Safari and Opera)/ */
+.scrollbar-hide::-webkit-scrollbar {
+  @apply hidden
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;
+}
+body {
+    @apply bg-gray-200 
+    /* text-my-text-color */
+    font-sans font-semibold
+    text-gray-700
+}
+.menu_part{
+    @apply relative  left-1/2 transform -translate-x-1/2  text-center m-0 p-0 pt-10 
+}
+.menu_part h1{
+    @apply text-[2rem] md:text-[3.5rem] font-bold text-center
+}
+.menu_part h2{
+    @apply  font-bold text-Tird_Color opacity-[0.15] text-[2.1rem] md:text-[3.8rem] lg:text-[5rem]  
+    absolute  leading-none left-1/2 transform -translate-x-1/2 top-14 md:top-16 lg:top-12
+}
+#Skills_style{
+    @apply  font-bold mx-2 py-3 px-4 rounded-lg shadow-md shadow-slate-500 transition duration-500 
+}
+@tailwind base; 
+@tailwind components;
+@tailwind utilities;
