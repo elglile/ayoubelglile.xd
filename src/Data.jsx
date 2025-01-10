@@ -1,10 +1,17 @@
-import { FaBehance, FaFacebook, FaGithub, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
+import {
+  FaBehance,
+  FaFacebook,
+  FaGithub,
+  FaLinkedin,
+  FaPhoneAlt,
+} from "react-icons/fa";
 import { assets } from "./assets/assets";
 import { BsGithub, BsInstagram } from "react-icons/bs";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { TbEyeShare } from "react-icons/tb";
 import { MdOutlineMail } from "react-icons/md";
+import { FiFigma } from "react-icons/fi";
 export let MyInfo = [
   {
     fullName: "Ayoub El-Glile",
@@ -26,7 +33,7 @@ export let MyInfo = [
       {
         id: 2,
         Instagram: "elglile_ayoub",
-        link: "https://", // Link to open the phone dialer
+        link: "https://www.instagram.com/elglile_ayoub_7?igsh=YmNjY3Y3NHVwdWRx", // Link to open the phone dialer
         icoo: <BsInstagram size={21} className="hover:text-pink-600" />,
       },
       {
@@ -39,7 +46,7 @@ export let MyInfo = [
         id: 4,
         Behance: "ayoub_xd",
         link: "", // LinkedIn profile link
-        icoo: <FaBehance     size={21} className="hover:text-black" />,
+        icoo: <FaBehance size={21} className="hover:text-black" />,
       },
       {
         id: 5,
@@ -101,7 +108,8 @@ export let MyInfo = [
         },
       },
       {
-        paragraph:"strengths       :Adaptability, Continuous learning, Organizational skills",
+        paragraph:
+          "strengths       :Adaptability, Continuous learning, Organizational skills",
       },
     ],
 
@@ -285,6 +293,8 @@ export let MyInfo = [
       {
         id: 1,
         Dashbord_web_App_name: "EasyStady",
+        image_src:
+          "https://res.cloudinary.com/diypq1cyl/image/upload/v1736510086/znvtoru5xrniydqcqkpw.png",
         description:
           "Platform to help mobile students find accommodation, jobs, transport and catering.",
         Gitlink: {
@@ -300,10 +310,14 @@ export let MyInfo = [
           src: (
             <TbEyeShare
               size={28}
-              className="hover:text-white hover:bg-Tird_Color hover:rounded-xl transition duration-500 ease-in-out  "
+              className="hover:text-Tird_Color  hover:rounded-xl transition duration-500 ease-in-out  "
             />
           ),
           link: "https://res.cloudinary.com/diypq1cyl/image/upload/v1734825748/o01or1aotvpnw34k9nil.png",
+        },
+        Figmalink: {
+          src: 'https://res.cloudinary.com/diypq1cyl/image/upload/v1736512146/figma_ix8tib.png',
+          link: "",
         },
         languages_prog: {
           language1:
@@ -317,73 +331,86 @@ export let MyInfo = [
       {
         id: 2,
         Dashbord_web_App_name: "FastLoad",
+        image_src:
+          "https://res.cloudinary.com/diypq1cyl/image/upload/v1736510086/ctz0mumbkkn0w3ggzcu8.png",
         description:
           "A site that lets you download videos using a simple URL from any platform.",
-          Gitlink: {
-            src: (
-              <FaGithub
-                size={28}
-                className="text-black hover:text-orange-600 transition duration-500 "
-              />
-            ),
-            link: "https://github.com/elglile/FastLoad.git",
-          },
-          dimolink: {
-            src: (
-              <TbEyeShare
-                size={28}
-                className="hover:text-white hover:bg-Tird_Color hover:rounded-xl transition duration-500 ease-in-out  "
-              />
-            ),
-            link: "",
-          },
-          languages_prog: {
-            language1:
-              "https://res.cloudinary.com/diypq1cyl/image/upload/v1734825748/o01or1aotvpnw34k9nil.png",
-            language2:
-              "https://res.cloudinary.com/diypq1cyl/image/upload/v1734825749/qz2csfjfhsmyijhxv7oa.png",
-            language3:
-              "https://res.cloudinary.com/diypq1cyl/image/upload/v1734826524/bgnrx1ccpj6ofxquws77.png",
-          },
+        Gitlink: {
+          src: (
+            <FaGithub
+              size={28}
+              className="text-black hover:text-orange-600 transition duration-500 "
+            />
+          ),
+          link: "https://github.com/elglile/FastLoad.git",
+        },
+        dimolink: {
+          src: (
+            <TbEyeShare
+              size={28}
+              className="hover:text-Tird_Color hover:rounded-xl transition duration-500 ease-in-out  "
+            />
+          ),
+          link: "",
+        },
+        Figmalink: {
+          src: 'https://res.cloudinary.com/diypq1cyl/image/upload/v1736512146/figma_ix8tib.png',
+          link: "",
+        },
+        languages_prog: {
+          language1:
+            "https://res.cloudinary.com/diypq1cyl/image/upload/v1734825748/o01or1aotvpnw34k9nil.png",
+          language2:
+            "https://res.cloudinary.com/diypq1cyl/image/upload/v1734825749/qz2csfjfhsmyijhxv7oa.png",
+          language3:
+            "https://res.cloudinary.com/diypq1cyl/image/upload/v1734826524/bgnrx1ccpj6ofxquws77.png",
+        },
       },
       {
         id: 3,
-        Dashbord_web_App_name: "FastLoad",
+        Dashbord_web_App_name: "Ayoubelglile.xd",
+        image_src:
+          "https://res.cloudinary.com/diypq1cyl/image/upload/v1736344990/beawn60yg1l17gslo3tb.png",
         description:
-          "A site that lets you download videos using a simple URL from any platform.",
-          Gitlink: {
-            src: (
-              <FaGithub
-                size={28}
-                className="text-black hover:text-orange-600 transition duration-500 "
-              />
-            ),
-            link: "https://github.com/elglile/FastLoad.git",
-          },
-          dimolink: {
-            src: (
-              <TbEyeShare
-                size={28}
-                className="hover:text-white hover:bg-Tird_Color hover:rounded-xl transition duration-500 ease-in-out  "
-              />
-            ),
-            link: "",
-          },
-          languages_prog: {
-            language1:
-              "https://res.cloudinary.com/diypq1cyl/image/upload/v1734825748/o01or1aotvpnw34k9nil.png",
-            language2:
-              "https://res.cloudinary.com/diypq1cyl/image/upload/v1734825749/qz2csfjfhsmyijhxv7oa.png",
-            language3:
-              "https://res.cloudinary.com/diypq1cyl/image/upload/v1734826524/bgnrx1ccpj6ofxquws77.png",
-          },
+          "A platform to present my online portfolio and showcase my skills, projects and services.",
+        Gitlink: {
+          src: (
+            <FaGithub
+              size={28}
+              className="text-black hover:text-orange-600 transition duration-500 "
+            />
+          ),
+          link: "https://github.com/elglile/ayoubelglile.xd",
+        },
+        dimolink: {
+          src: (
+            <TbEyeShare
+              size={28}
+              className="hover:text-Tird_Color hover:rounded-xl transition duration-500 ease-in-out  "
+            />
+          ),
+          link: "https://ayoubelglile-xd.vercel.app/",
+        },
+        Figmalink: {
+          src: 'https://res.cloudinary.com/diypq1cyl/image/upload/v1736512146/figma_ix8tib.png',
+          link: "",
+        },
+        languages_prog: {
+          language1:
+            "https://res.cloudinary.com/diypq1cyl/image/upload/v1734825748/o01or1aotvpnw34k9nil.png",
+          language2:
+            "https://res.cloudinary.com/diypq1cyl/image/upload/v1734825749/qz2csfjfhsmyijhxv7oa.png",
+          language3:
+            "https://res.cloudinary.com/diypq1cyl/image/upload/v1736508852/gfopdthhcxntnxtovq64.png",
+        },
       },
     ],
     Myservices: [
       {
         title: "Frontend",
         icon: "Code",
-        description: "We specialize in creating responsive user interfaces with expertise in ReactJS, HTML, CSS, and API integration. My projects showcase my proficiency in delivering sophisticated, functional web solutions that are tailored to user needs. ",
+        description:
+          "We specialize in creating responsive user interfaces with expertise in ReactJS, HTML, CSS, and API integration. My projects showcase my proficiency in delivering sophisticated, functional web solutions that are tailored to user needs. ",
       },
       {
         title: "Web Design",

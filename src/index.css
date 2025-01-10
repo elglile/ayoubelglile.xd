@@ -39,6 +39,9 @@ body {
 #Skills_style{
     @apply  font-bold mx-2 py-3 px-4 rounded-lg shadow-md shadow-slate-500 transition duration-500 
 }
+.blackhover:not(:hover){
+    @apply  grayscale transition-all duration-500
+}
 @tailwind base; 
 @tailwind components;
 @tailwind utilities;

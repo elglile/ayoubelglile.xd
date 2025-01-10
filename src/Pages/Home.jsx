@@ -290,7 +290,7 @@ function Projects() {
                 <div className="relative">
                   <img
                     src={project.image_src || assets.bg9}
-                    className="col-span-2 md:col-span-1 w-[100%] h-44 p-1 rounded-xl"
+                    className="col-span-2 md:col-span-1 p-1 rounded-xl absolute inset-0  w-full h-full object-cover object-center transition duration-500 hover:scale-105"
                     alt="Image does not apply"
                   />
                   <div className="absolute top-2 right-2 flex-col flex items-baseline justify-center space-x-2">
@@ -316,6 +316,10 @@ function Projects() {
                   </p>
                   <div className="flex items-end justify-between flex-col-reverse space-y-4 ">
                     <div className="flex space-x-3">
+                      <a href={project.Figmalink.link}>
+                        <img  src={project.Figmalink.src} width={'28px'} className="blackhover" />
+                      </a>
+                      
                       <a href={project.Gitlink.link}>{project.Gitlink.src}</a>
                       <a href={project.dimolink.link}>{project.dimolink.src}</a>
                     </div>
