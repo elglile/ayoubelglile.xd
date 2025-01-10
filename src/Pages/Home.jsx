@@ -45,8 +45,9 @@ function Home() {
                             text-xl md:text-4xl font-mono font-bold
                             flex items-start justify-center "
           >
-            <p className="ms:mx-52 text-center md:my-24 space-y-[6px] block w-[100%]">
-              <h1 className="text-black">
+            <p className="ms:mx-52 text-center md:my-24 space-y-6 block w-[100%] ">
+              <div>
+                <h1 className="text-black">
                 Hello <span className="text-Tird_Color"> I'm</span>
                 <br />
               </h1>
@@ -70,7 +71,10 @@ function Home() {
                   repeat={Infinity}
                 />
               </div>
-              <div className="space-x-2 mt-4">
+              </div>
+
+
+              <div className=" space-x-2 mt-4">
                 <a
                   href={cvLink}
                   target="_blank"
@@ -97,7 +101,8 @@ function Home() {
                 </a>
               </div>
 
-              <div className="space-y-8 space-x-6 text-Tird_Color flex items-end justify-center">
+
+              <div className=" space-x-6 text-Tird_Color flex items-end justify-center">
                 {socialLinks.slice(5, 10).map((l, i) => (
                   <>
                     <a

@@ -11,9 +11,9 @@ export let MyInfo = [
     address: "Sidi Maarouf, Al Moustakbal, 26300, Casablanca, Morocco",
     profileImage: assets.profile,
     cvLink:
-      "https://res.cloudinary.com/diypq1cyl/image/upload/v1736504541/Doc_by_ayoub_Anglais_pmp1ki.pdf", // Add your CV link
+      "https://res.cloudinary.com/diypq1cyl/image/upload/v1736507375/Doc_by_ayoub_Anglais_pnpi4d.pdf", // Add your CV link
     cvLink_Français:
-      "https://res.cloudinary.com/diypq1cyl/image/upload/v1736502693/bfva0z5tvkeqiq8xzct1.pdf", // Add your CV link
+      "https://res.cloudinary.com/diypq1cyl/image/upload/v1736507375/Doc_by_ayoub_Fran%C3%A7ais_dw22m4.pdf", // Add your CV link
     Mylogo: assets.logo,
     MylogoG: assets.LOGO,
     socialLinks: [
@@ -346,7 +346,38 @@ export let MyInfo = [
               "https://res.cloudinary.com/diypq1cyl/image/upload/v1734826524/bgnrx1ccpj6ofxquws77.png",
           },
       },
-
+      {
+        id: 3,
+        Dashbord_web_App_name: "FastLoad",
+        description:
+          "A site that lets you download videos using a simple URL from any platform.",
+          Gitlink: {
+            src: (
+              <FaGithub
+                size={28}
+                className="text-black hover:text-orange-600 transition duration-500 "
+              />
+            ),
+            link: "https://github.com/elglile/FastLoad.git",
+          },
+          dimolink: {
+            src: (
+              <TbEyeShare
+                size={28}
+                className="hover:text-white hover:bg-Tird_Color hover:rounded-xl transition duration-500 ease-in-out  "
+              />
+            ),
+            link: "",
+          },
+          languages_prog: {
+            language1:
+              "https://res.cloudinary.com/diypq1cyl/image/upload/v1734825748/o01or1aotvpnw34k9nil.png",
+            language2:
+              "https://res.cloudinary.com/diypq1cyl/image/upload/v1734825749/qz2csfjfhsmyijhxv7oa.png",
+            language3:
+              "https://res.cloudinary.com/diypq1cyl/image/upload/v1734826524/bgnrx1ccpj6ofxquws77.png",
+          },
+      },
     ],
     Myservices: [
       {

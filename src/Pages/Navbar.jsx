@@ -22,7 +22,7 @@ const Navbar = () => {
     return (
         <>
             <nav
-                className=" flex flex-col items-center xl:justify-center gap-y-4 fixed h-max
+                className="fixed flex flex-col items-center xl:justify-center gap-y-4  h-max
                 bottom-0 mt-auto xl:right-[1.5%] z-10 top-0 w-full xl:w-12 xl:max-w-md xl:h-screen 
                 text-Tird_Color"
             >
