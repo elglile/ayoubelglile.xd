@@ -14,7 +14,7 @@ import { useEffect } from "react";
 export default function Fct() {
   return (
     <div className="select-none">
-        {/* <Home /> */}
+        <Home />
         <About />
         <ExperienceSection />
         {/* <Skills /> */}
@@ -29,79 +29,79 @@ export default function Fct() {
 }
 
 
-// function Home() {
-//   const { fullName, profileImage, cvLink, careerFocus } = MyInfo[0];
+function Home() {
+  const { fullName, profileImage, cvLink, careerFocus } = MyInfo[0];
 
-//   return (
-//     <>
-//       <div className="w-full lg:h-screen pb-20 animation_scroling " id="Home">
-//         <Seminavbar />
-//         <div className="h-full grid grid-cols-2 lg:px-[100px] 
-//                         pt-24 md:pt-20 lg:pt-20 
-//                         lg:w-[90%] mx-auto
-//                         ">
-//           {/* Left Section */}
-//           <div
-//             className="col-span-2 md:col-span-1 order-2 md:order-1
-//                             text-xl md:text-4xl font-mono font-bold
-//                             flex items-start justify-center "
-//           >
-//             <p className="ms:mx-52 text-center md:my-40 space-y-[6px] block w-[100%]">
-//               <h1 className="text-black">
-//                 Hello <span className="text-Tird_Color"> I'm</span>
-//                 <br />
-//               </h1>
-//               <h1 className="text-black">{fullName}</h1>
-//               <div className="text-Tird_Color">
-//                 <TypeAnimation
-//                   sequence={[
-//                     ...careerFocus.flatMap((focus) => [focus, 1000]), // Dynamically add each focus and wait time
-//                   ]}
-//                   wrapper="span"
-//                   speed={50}
-//                   style={{
-//                     fontSize: "1.5rem",
-//                     display: "inline-block",
-//                     width: "100%",
-//                     whiteSpace: "nowrap",
-//                     fontFamily: "monospace",
-//                     overflow: "hidden",
-//                     letterSpacing: "1px",
-//                   }}
-//                   repeat={Infinity}
-//                 />
-//               </div>
-//               <a
-//                 href={cvLink}
-//                 target="_blank"
-//                 rel="noopener noreferrer"
-//                 className="text-sm font-mono bg-Tird_Color py-2 px-2 my-2 rounded-lg font-bold border-Tird_Color border-[3px] text-white
-//                         hover:bg-transparent hover:border-[3px] hover:border-Tird_Color hover:text-tirborder-Tird_Color hover:font-bold hover:text-Tird_Color
-//                         transition duration-500 ease-in-out
-//                 "
-//               >
-//                 CV Review
-//                 <MdReviews className="inline ml-2" size={22} />
-//               </a>
-//             </p>
-//           </div>
+  return (
+    <>
+      <div className="w-full lg:h-screen pb-20 animation_scroling " id="Home">
+        <Seminavbar />
+        <div className="h-full grid grid-cols-2 lg:px-[100px] 
+                        pt-24 md:pt-20 lg:pt-20 
+                        lg:w-[90%] mx-auto
+                        ">
+          {/* Left Section */}
+          <div
+            className="col-span-2 md:col-span-1 order-2 md:order-1
+                            text-xl md:text-4xl font-mono font-bold
+                            flex items-start justify-center "
+          >
+            <p className="ms:mx-52 text-center md:my-40 space-y-[6px] block w-[100%]">
+              <h1 className="text-black">
+                Hello <span className="text-Tird_Color"> I'm</span>
+                <br />
+              </h1>
+              <h1 className="text-black">{fullName}</h1>
+              <div className="text-Tird_Color">
+                <TypeAnimation
+                  sequence={[
+                    ...careerFocus.flatMap((focus) => [focus, 1000]), // Dynamically add each focus and wait time
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  style={{
+                    fontSize: "1.5rem",
+                    display: "inline-block",
+                    width: "100%",
+                    whiteSpace: "nowrap",
+                    fontFamily: "monospace",
+                    overflow: "hidden",
+                    letterSpacing: "1px",
+                  }}
+                  repeat={Infinity}
+                />
+              </div>
+              <a
+                href={cvLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-mono bg-Tird_Color py-2 px-2 my-2 rounded-lg font-bold border-Tird_Color border-[3px] text-white
+                        hover:bg-transparent hover:border-[3px] hover:border-Tird_Color hover:text-tirborder-Tird_Color hover:font-bold hover:text-Tird_Color
+                        transition duration-500 ease-in-out
+                "
+              >
+                CV Review
+                <MdReviews className="inline ml-2" size={22} />
+              </a>
+            </p>
+          </div>
 
-//           {/* Right Section */}
-//           <div className="col-span-2 md:col-span-1 flex items-start justify-center order-1 md:order-2">
-//             <div className="h-full w-[320] sm:w-[330px] md:w-[400px] lg:w-[480px] -z-10 absolute">
-//               <img src={assets.Hand} alt="" />
-//             </div>
-//             <img
-//               src={profileImage}
-//               alt={fullName}
-//               className="md:w-[350px] w-[250px]"
-//             />
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// }
+          {/* Right Section */}
+          <div className="col-span-2 md:col-span-1 flex items-start justify-center order-1 md:order-2">
+            <div className="h-full w-[320] sm:w-[330px] md:w-[400px] lg:w-[480px] -z-10 absolute">
+              <img src={assets.Hand} alt="" />
+            </div>
+            <img
+              src={profileImage}
+              alt={fullName}
+              className="md:w-[350px] w-[250px]"
+            />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
 
 
 
