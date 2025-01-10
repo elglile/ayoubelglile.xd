@@ -1,7 +1,6 @@
 import { FaBehance, FaFacebook, FaGithub, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
 import { assets } from "./assets/assets";
 import { BsGithub, BsInstagram } from "react-icons/bs";
-import { CiPhone } from "react-icons/ci";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { TbEyeShare } from "react-icons/tb";
@@ -71,6 +70,12 @@ export let MyInfo = [
         Twitter: "ayoub_elglile_7",
         link: "https://x.com/x_goju", // LinkedIn profile link
         icoo: <FaXTwitter size={21} className="hover:text-black" />,
+      },
+      {
+        id: 10,
+        email: "ayoubelglile@gmail.com",
+        link: "https://www.facebook.com/share/aDjd7Aj2dbPRwP7q/?mibextid=wwXIfr", // Link to open the email client
+        icoo: <MdOutlineMail size={24} className="hover:text-black" />,
       },
     ],
     careerFocus: ["Front-End Development", "Web Desiger"],

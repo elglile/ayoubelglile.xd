@@ -36,7 +36,7 @@ function Home() {
         <div
           className="h-full grid grid-cols-2 lg:px-[100px] 
                         pt-24 md:pt-20 lg:pt-20 
-                        lg:w-[90%] mx-auto
+                        lg:w-[76%] mx-auto
                         "
         >
           {/* Left Section */}
@@ -45,7 +45,7 @@ function Home() {
                             text-xl md:text-4xl font-mono font-bold
                             flex items-start justify-center "
           >
-            <p className="ms:mx-52 text-center md:my-40 space-y-[6px] block w-[100%]">
+            <p className="ms:mx-52 text-center md:my-24 space-y-[6px] block w-[100%]">
               <h1 className="text-black">
                 Hello <span className="text-Tird_Color"> I'm</span>
                 <br />
@@ -98,7 +98,7 @@ function Home() {
               </div>
 
               <div className="space-y-8 space-x-6 text-Tird_Color flex items-end justify-center">
-                {socialLinks.slice(4, 9).map((l, i) => (
+                {socialLinks.slice(5, 10).map((l, i) => (
                   <>
                     <a
                       key={i}
@@ -217,13 +217,14 @@ function Skills() {
         </div>
         <div className="flex flex-col items-center justify-center lg:w-[80%] py-10 mx-auto">
           {/* Skills menu */}
-          <div style={{ display: "flex", padding: "10px" }} className="">
+          <div style={{ display: "flex", padding: "10px" }} className="flex-wrap"> 
             {skillsMenu.map((menus, i) => (
               <a
                 key={i}
                 className={menus.Classname}
                 id="Skills_style"
                 style={{
+                  margin: "5px",
                   padding: "10px",
                   backgroundColor:
                     selectedMenu === menus.Classname ? "#0077B6" : "white",
