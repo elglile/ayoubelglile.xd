@@ -17,7 +17,7 @@ export default function Fct() {
         {/* <Home /> */}
         <About />
         <ExperienceSection />
-        <Skills />
+        {/* <Skills /> */}
         <Projects />
         <Myservices />
         <Contactsection />
@@ -168,68 +168,68 @@ function About() {
 }
 
 
-function Skills() {
-  const {skillsMenu , MySkills}  = MyInfo[0];
-  const [dt, setDt] = useState([...MySkills]); // Replace SkillsData with MySkills
-  const [selectedMenu, setSelectedMenu] = useState("All");
+// function Skills() {
+//   const {skillsMenu , MySkills}  = MyInfo[0];
+//   const [dt, setDt] = useState([...MySkills]); // Replace SkillsData with MySkills
+//   const [selectedMenu, setSelectedMenu] = useState("All");
 
-  function FilterData(e) {
-    setSelectedMenu(e.target.className);
-    if (e.target.className !== "All") {
-      setDt([...MySkills.filter(el => el.type === e.target.className)]);
-    } else {
-      setDt([...MySkills]);
-    }
-  }
+//   function FilterData(e) {
+//     setSelectedMenu(e.target.className);
+//     if (e.target.className !== "All") {
+//       setDt([...MySkills.filter(el => el.type === e.target.className)]);
+//     } else {
+//       setDt([...MySkills]);
+//     }
+//   }
 
-  return (
-    <>
-      <div id="Skills" className="bg-white animation_scroling">
-        <div className="menu_part">
-          <h1>My SKILLS</h1>
-          <h2>My SKILLS</h2>
-        </div>
-        <div className="flex flex-col items-center justify-center lg:w-[80%] py-10 mx-auto">
-          {/* Skills menu */}
-          <div style={{ display: "flex", padding: "10px" }} className="">
-            {
-              skillsMenu.map((menus, i) => (
-                <a
-                  key={i}
-                  className={menus.Classname}
-                  id="Skills_style"
-                  style={{
-                    padding: "10px",
-                    backgroundColor: selectedMenu === menus.Classname ? "#0077B6" : "white",
-                  }}
-                  onClick={FilterData}
-                >
-                  {menus.name}
-                </a>
-              ))
-            }
-          </div>
-          {/* Skills */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8">
-            {
-              dt.map((el, x) => (
-                <div key={x} className="group flex flex-col items-center 
-                          bg-gray-100 mx-1 my-4 py-6 px-6 space-y-4 hover:bg-white hover:shadow-2xl">
-                  <div className="border-2 p-3 rounded-full w-[80px] m-auto 
-                    group-hover:border-Tird_Color group-hover:bg-gray-200 group-hover:scale-110 transition-all duration-600">
-                    <img src={el.src} alt={el.name} className="lg:w-[120px]  " />
-                  </div>
-                  <h1 className="font-bold text-sm text-center group-hover:text-Tird_Color transition-colors duration-500">{el.name}</h1>
-                  {/* <p className="">{el.desc}</p> */}
-                </div>
-              ))
-            }
-          </div>
-        </div>
-      </div>
-    </>
-  );
-}
+//   return (
+//     <>
+//       <div id="Skills" className="bg-white animation_scroling">
+//         <div className="menu_part">
+//           <h1>My SKILLS</h1>
+//           <h2>My SKILLS</h2>
+//         </div>
+//         <div className="flex flex-col items-center justify-center lg:w-[80%] py-10 mx-auto">
+//           {/* Skills menu */}
+//           <div style={{ display: "flex", padding: "10px" }} className="">
+//             {
+//               skillsMenu.map((menus, i) => (
+//                 <a
+//                   key={i}
+//                   className={menus.Classname}
+//                   id="Skills_style"
+//                   style={{
+//                     padding: "10px",
+//                     backgroundColor: selectedMenu === menus.Classname ? "#0077B6" : "white",
+//                   }}
+//                   onClick={FilterData}
+//                 >
+//                   {menus.name}
+//                 </a>
+//               ))
+//             }
+//           </div>
+//           {/* Skills */}
+//           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8">
+//             {
+//               dt.map((el, x) => (
+//                 <div key={x} className="group flex flex-col items-center 
+//                           bg-gray-100 mx-1 my-4 py-6 px-6 space-y-4 hover:bg-white hover:shadow-2xl">
+//                   <div className="border-2 p-3 rounded-full w-[80px] m-auto 
+//                     group-hover:border-Tird_Color group-hover:bg-gray-200 group-hover:scale-110 transition-all duration-600">
+//                     <img src={el.src} alt={el.name} className="lg:w-[120px]  " />
+//                   </div>
+//                   <h1 className="font-bold text-sm text-center group-hover:text-Tird_Color transition-colors duration-500">{el.name}</h1>
+//                   {/* <p className="">{el.desc}</p> */}
+//                 </div>
+//               ))
+//             }
+//           </div>
+//         </div>
+//       </div>
+//     </>
+//   );
+// }
 
 function Projects() {
   const { MY_PROJECT } = MyInfo[0];
