@@ -1,45 +1,44 @@
 import { assets } from "../assets/assets";
 import { Seminavbar } from "./Navbar";
 import { TypeAnimation } from "react-type-animation";
-import {  useRef, useState } from "react";
-import {  MyInfo } from "../Data";
-import { Code, Palette, Building2, MapPin } from 'lucide-react';
+import { useRef, useState } from "react";
+import { MyInfo } from "../Data";
+import { Code, Palette, Building2, MapPin } from "lucide-react";
 import { MdReviews } from "react-icons/md";
 import { IoSend } from "react-icons/io5";
-import emailjs from '@emailjs/browser'
+import emailjs from "@emailjs/browser";
 import { useEffect } from "react";
-
-
+import { TiExportOutline } from "react-icons/ti";
 
 export default function Fct() {
   return (
     <div className="select-none">
-        <Home />
-        <About />
-        <ExperienceSection />
-        {/* <Skills /> */}
-        <Projects />
-        <Myservices />
-        <Contactsection />
-        <Footer/>
-
-
+      <Home />
+      <About />
+      <ExperienceSection />
+      <Skills />
+      <Projects />
+      <Myservices />
+      <Contactsection />
+      <Footer />
     </div>
   );
 }
 
-
 function Home() {
-  const { fullName, profileImage, cvLink, careerFocus } = MyInfo[0];
+  const { fullName, profileImage, cvLink, careerFocus, socialLinks , cvLink_Français } =
+    MyInfo[0];
 
   return (
     <>
       <div className="w-full lg:h-screen pb-20 animation_scroling " id="Home">
         <Seminavbar />
-        <div className="h-full grid grid-cols-2 lg:px-[100px] 
+        <div
+          className="h-full grid grid-cols-2 lg:px-[100px] 
                         pt-24 md:pt-20 lg:pt-20 
                         lg:w-[90%] mx-auto
-                        ">
+                        "
+        >
           {/* Left Section */}
           <div
             className="col-span-2 md:col-span-1 order-2 md:order-1
@@ -71,18 +70,48 @@ function Home() {
                   repeat={Infinity}
                 />
               </div>
-              <a
-                href={cvLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-mono bg-Tird_Color py-2 px-2 my-2 rounded-lg font-bold border-Tird_Color border-[3px] text-white
+              <div className="space-x-2 mt-4">
+                <a
+                  href={cvLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-mono bg-Tird_Color py-2 px-2 my-2 rounded-lg font-bold border-Tird_Color border-[3px] text-white
                         hover:bg-transparent hover:border-[3px] hover:border-Tird_Color hover:text-tirborder-Tird_Color hover:font-bold hover:text-Tird_Color
                         transition duration-500 ease-in-out
                 "
-              >
-                CV Review
-                <MdReviews className="inline ml-2" size={22} />
-              </a>
+                >
+                  CV Review
+                  <MdReviews className="inline ml-2" size={22} />
+                </a>
+                <a
+                  href={cvLink_Français}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-mono bg-transparent py-2 px-2 my-2 rounded-lg font-bold border-gray-800 border-[2px] text-gray-800
+                        hover:bg-gray-800 hover:border-[2px] hover:border-gray-800 hover:text-tirborder-Tird_Color hover:font-bold hover:text-white
+                        transition duration-500 ease-in-out
+                "
+                >
+                  CV Français
+                  <TiExportOutline className="inline ml-2" size={22} />
+                </a>
+              </div>
+
+              <div className="space-y-8 space-x-6 text-Tird_Color flex items-end justify-center">
+                {socialLinks.slice(4, 9).map((l, i) => (
+                  <>
+                    <a
+                      key={i}
+                      href={l.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover"
+                    >
+                      {l.icoo}
+                    </a>
+                  </>
+                ))}
+              </div>
             </p>
           </div>
 
@@ -103,20 +132,17 @@ function Home() {
   );
 }
 
-
-
 function About() {
   const { aboutMe } = MyInfo[0];
   return (
     <>
-      <div id="About" className="  w-full pb-28 bg-gray-100 animation_scroling ">
+      <div
+        id="About"
+        className="  w-full pb-28 bg-gray-100 animation_scroling "
+      >
         <div className="menu_part ">
-          <h1 className="">
-            ABOUT ME
-          </h1>
-          <h2>
-            ABOUT ME
-          </h2>
+          <h1 className="">ABOUT ME</h1>
+          <h2>ABOUT ME</h2>
         </div>
         <div className=" grid grid-cols-5 lg:w-[80%] mx-auto ">
           <div className="col-span-5 lg:col-span-2 flex items-start justify-center top-10">
@@ -134,9 +160,11 @@ function About() {
                 </>
               ))} */}
 
-
               {aboutMe.map((item) => (
-                <li className="border-l-4 border-gray-200  px-3 py-2" key={item.id}>
+                <li
+                  className="border-l-4 border-gray-200  px-3 py-2"
+                  key={item.id}
+                >
                   {item.paragraph ? (
                     <p>{item.paragraph}</p> // إذا كان هناك نص paragraph، قم بعرضه
                   ) : (
@@ -158,78 +186,80 @@ function About() {
                   )}
                 </li>
               ))}
-
-
             </ul>
           </div>
-        </div></div>
+        </div>
+      </div>
     </>
   );
 }
 
+function Skills() {
+  const { skillsMenu, MySkills } = MyInfo[0];
+  const [dt, setDt] = useState([...MySkills]); // Replace SkillsData with MySkills
+  const [selectedMenu, setSelectedMenu] = useState("All");
 
-// function Skills() {
-//   const {skillsMenu , MySkills}  = MyInfo[0];
-//   const [dt, setDt] = useState([...MySkills]); // Replace SkillsData with MySkills
-//   const [selectedMenu, setSelectedMenu] = useState("All");
+  function FilterData(e) {
+    setSelectedMenu(e.target.className);
+    if (e.target.className !== "All") {
+      setDt([...MySkills.filter((el) => el.type === e.target.className)]);
+    } else {
+      setDt([...MySkills]);
+    }
+  }
 
-//   function FilterData(e) {
-//     setSelectedMenu(e.target.className);
-//     if (e.target.className !== "All") {
-//       setDt([...MySkills.filter(el => el.type === e.target.className)]);
-//     } else {
-//       setDt([...MySkills]);
-//     }
-//   }
-
-//   return (
-//     <>
-//       <div id="Skills" className="bg-white animation_scroling">
-//         <div className="menu_part">
-//           <h1>My SKILLS</h1>
-//           <h2>My SKILLS</h2>
-//         </div>
-//         <div className="flex flex-col items-center justify-center lg:w-[80%] py-10 mx-auto">
-//           {/* Skills menu */}
-//           <div style={{ display: "flex", padding: "10px" }} className="">
-//             {
-//               skillsMenu.map((menus, i) => (
-//                 <a
-//                   key={i}
-//                   className={menus.Classname}
-//                   id="Skills_style"
-//                   style={{
-//                     padding: "10px",
-//                     backgroundColor: selectedMenu === menus.Classname ? "#0077B6" : "white",
-//                   }}
-//                   onClick={FilterData}
-//                 >
-//                   {menus.name}
-//                 </a>
-//               ))
-//             }
-//           </div>
-//           {/* Skills */}
-//           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8">
-//             {
-//               dt.map((el, x) => (
-//                 <div key={x} className="group flex flex-col items-center 
-//                           bg-gray-100 mx-1 my-4 py-6 px-6 space-y-4 hover:bg-white hover:shadow-2xl">
-//                   <div className="border-2 p-3 rounded-full w-[80px] m-auto 
-//                     group-hover:border-Tird_Color group-hover:bg-gray-200 group-hover:scale-110 transition-all duration-600">
-//                     <img src={el.src} alt={el.name} className="lg:w-[120px]  " />
-//                   </div>
-//                   <h1 className="font-bold text-sm text-center group-hover:text-Tird_Color transition-colors duration-500">{el.name}</h1>
-//                   {/* <p className="">{el.desc}</p> */}
-//                 </div>
-//               ))
-//             }
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// }
+  return (
+    <>
+      <div id="Skills" className="bg-white animation_scroling">
+        <div className="menu_part">
+          <h1>My SKILLS</h1>
+          <h2>My SKILLS</h2>
+        </div>
+        <div className="flex flex-col items-center justify-center lg:w-[80%] py-10 mx-auto">
+          {/* Skills menu */}
+          <div style={{ display: "flex", padding: "10px" }} className="">
+            {skillsMenu.map((menus, i) => (
+              <a
+                key={i}
+                className={menus.Classname}
+                id="Skills_style"
+                style={{
+                  padding: "10px",
+                  backgroundColor:
+                    selectedMenu === menus.Classname ? "#0077B6" : "white",
+                }}
+                onClick={FilterData}
+              >
+                {menus.name}
+              </a>
+            ))}
+          </div>
+          {/* Skills */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8">
+            {dt.map((el, x) => (
+              <div
+                key={x}
+                className="group flex flex-col items-center 
+                          bg-gray-100 mx-1 my-4 py-6 px-6 space-y-4 hover:bg-white hover:shadow-2xl"
+              >
+                <div
+                  className="border-2 p-3 rounded-full w-[80px] m-auto 
+                    group-hover:border-Tird_Color group-hover:bg-gray-200 group-hover:scale-110 transition-all duration-600"
+                >
+                  <img src={el.src} alt={el.name} className="lg:w-[120px]  " />
+                </div>
+                <h1 className="font-bold text-sm text-center group-hover:text-Tird_Color transition-colors duration-500">
+                  {el.name}
+                </h1>
+                {/* <p className="">{el.desc}</p> */}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
 
 function Projects() {
   const { MY_PROJECT } = MyInfo[0];
@@ -269,23 +299,22 @@ function Projects() {
                   </div>
                 </div>
                 <div className="col-span-2 md:col-span-1 p-2  space-y-2">
-                    <h1 className="font-bold font-mono text-lg">{project.Dashbord_web_App_name}</h1>
-                    <p className="md:text-[0.9rem] h-[98px]
+                  <h1 className="font-bold font-mono text-lg">
+                    {project.Dashbord_web_App_name}
+                  </h1>
+                  <p
+                    className="md:text-[0.9rem] h-[98px]
                             overflow-y-scroll scrollbar-thin scrollbar-thumb-Tird_Color scrollbar-track-slate-100"
-                    >
-                      {project.description}
-                    </p>
-                    <div className="flex items-end justify-between flex-col-reverse space-y-4 ">
-                      <div className="flex space-x-3">
-                        <a href={project.Gitlink.link}>
-                          {project.Gitlink.src}
-                        </a>
-                        <a href={project.dimolink.link}>
-                        {project.dimolink.src}
-                        </a>
-                      </div>
+                  >
+                    {project.description}
+                  </p>
+                  <div className="flex items-end justify-between flex-col-reverse space-y-4 ">
+                    <div className="flex space-x-3">
+                      <a href={project.Gitlink.link}>{project.Gitlink.src}</a>
+                      <a href={project.dimolink.link}>{project.dimolink.src}</a>
                     </div>
                   </div>
+                </div>
               </div>
             </div>
           ))}
@@ -295,20 +324,16 @@ function Projects() {
   );
 }
 
-
-
-
 function ExperienceSection() {
-  const {Myexperiences}  = MyInfo[0];
+  const { Myexperiences } = MyInfo[0];
   return (
-    <div id="ExperienceSection" className="min-h-screen bg-gray-200 p-8 md:p-16 animation_scroling">
+    <div
+      id="ExperienceSection"
+      className="min-h-screen bg-gray-200 p-8 md:p-16 animation_scroling"
+    >
       <div className="menu_part ">
-        <h1>
-          RESUME
-        </h1>
-        <h2>
-          RESUME
-        </h2>
+        <h1>RESUME</h1>
+        <h2>RESUME</h2>
       </div>
 
       <div className="relative py-4 lg:py-10  lg:w-[80%] mx-auto">
@@ -318,10 +343,12 @@ function ExperienceSection() {
         <div className="space-y-12">
           {Myexperiences.map((exp, index) => (
             <div key={index} className="relative">
-              <div className={`
+              <div
+                className={`
                   flex items-start gap-8
-                  ${exp.align === 'right' ? 'flex-row-reverse' : 'flex-row'}
-                `}>
+                  ${exp.align === "right" ? "flex-row-reverse" : "flex-row"}
+                `}
+              >
                 {/* Content */}
                 <div className="w-max	 lg:w-1/2">
                   <div className="bg-white border border-gray-200 rounded-lg p-6 hover:border-Tird_Color/50 transition-colors duration-300 shadow-md">
@@ -330,10 +357,15 @@ function ExperienceSection() {
                         <h3 className="text-lg font-semibold text-gray-800">
                           {exp.title}
                           {exp.company && (
-                            <span className="text-Tird_Color"> at {exp.company}</span>
+                            <span className="text-Tird_Color">
+                              {" "}
+                              at {exp.company}
+                            </span>
                           )}
                         </h3>
-                        <p className="text-sm text-Tird_Color/80">{exp.period}</p>
+                        <p className="text-sm text-Tird_Color/80">
+                          {exp.period}
+                        </p>
                       </div>
                       <p className="text-sm">{exp.description}</p>
                     </div>
@@ -351,27 +383,25 @@ function ExperienceSection() {
         </div>
       </div>
     </div>
-
   );
 }
 
 const iconMap = {
   Code: Code,
   Palette: Palette,
-  Building2: Building2
+  Building2: Building2,
 };
 
 function Myservices() {
-  const {Myservices} = MyInfo[0];
+  const { Myservices } = MyInfo[0];
   return (
-    <div id="services" className="min-h-screen bg-gray-100 p-8 md:p-16 animation_scroling">
+    <div
+      id="services"
+      className="min-h-screen bg-gray-100 p-8 md:p-16 animation_scroling"
+    >
       <div className="menu_part ">
-        <h1>
-          Myservices
-        </h1>
-        <h2>
-          Myservices
-        </h2>
+        <h1>Myservices</h1>
+        <h2>Myservices</h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6  py-20  lg:w-[80%] mx-auto">
         {Myservices.map((service, index) => {
@@ -403,7 +433,6 @@ function Myservices() {
     </div>
   );
 }
-
 
 function Contactsection() {
   const { address } = MyInfo[0];
@@ -445,7 +474,10 @@ function Contactsection() {
         },
         (error) => {
           console.error("Error sending message:", error.text);
-          setAlert({ type: "error", message: "Failed to send the message. Please try again!" });
+          setAlert({
+            type: "error",
+            message: "Failed to send the message. Please try again!",
+          });
         }
       );
   };
@@ -462,7 +494,10 @@ function Contactsection() {
   }, [alert]);
 
   return (
-    <div id="Contact" className="lg:min-h-screen p-3 lg:p-8 md:p-1 space-y-12 my-10 lg:my-0 animation_scroling">
+    <div
+      id="Contact"
+      className="lg:min-h-screen p-3 lg:p-8 md:p-1 space-y-12 my-10 lg:my-0 animation_scroling"
+    >
       <div className="menu_part">
         <h1>
           Contact <span className="text-Tird_Color">white me</span>
@@ -475,7 +510,8 @@ function Contactsection() {
           {/* Contact Form */}
           <div className="p-4 lg:p-8 col-span-3 lg:col-span-2">
             <h2 className="lg:text-xl font-semibold font-mono mb-8 text-center">
-              If you would like to get in touch with me, I would be happy to provide{" "}
+              If you would like to get in touch with me, I would be happy to
+              provide{" "}
               <span className="text-Tird_Color">my contact information.</span>
             </h2>
 
@@ -487,8 +523,10 @@ function Contactsection() {
                   w-52 top-24 left-4 right-1
                   md:top-32
                   lg:px-3 lg:w-72 lg:top-24 lg:left-4 lg:right-4 lg:mb-4 ${
-                  alert.type === "success" ? "bg-green-100 text-green-800 border-green-800" : "bg-red-100 text-red-800 border-red-800"
-                }`}
+                    alert.type === "success"
+                      ? "bg-green-100 text-green-800 border-green-800"
+                      : "bg-red-100 text-red-800 border-red-800"
+                  }`}
               >
                 {alert.message}
                 <span
@@ -500,10 +538,16 @@ function Contactsection() {
               </div>
             )}
 
-            <form className="space-y-6 contact_form" onSubmit={Send_a_Msg} ref={formRef}>
+            <form
+              className="space-y-6 contact_form"
+              onSubmit={Send_a_Msg}
+              ref={formRef}
+            >
               <div className="lg:flex lg:space-x-4 space-y-6 lg:space-y-0">
                 <div className="flex-1 space-y-2">
-                  <label className="text-sm text-gray-600" htmlFor="name">Your Name</label>
+                  <label className="text-sm text-gray-600" htmlFor="name">
+                    Your Name
+                  </label>
                   <input
                     name="name"
                     type="text"
@@ -512,7 +556,9 @@ function Contactsection() {
                   />
                 </div>
                 <div className="flex-1 space-y-2">
-                  <label className="text-sm text-gray-600" htmlFor="email">Email Address</label>
+                  <label className="text-sm text-gray-600" htmlFor="email">
+                    Email Address
+                  </label>
                   <input
                     name="email"
                     type="email"
@@ -524,7 +570,9 @@ function Contactsection() {
 
               <div className="lg:flex lg:space-x-4 space-y-6 lg:space-y-0">
                 <div className="flex-1 space-y-2">
-                  <label className="text-sm text-gray-600" htmlFor="Company">Company</label>
+                  <label className="text-sm text-gray-600" htmlFor="Company">
+                    Company
+                  </label>
                   <input
                     name="Company"
                     type="text"
@@ -533,7 +581,9 @@ function Contactsection() {
                   />
                 </div>
                 <div className="flex-1 space-y-2">
-                  <label className="text-sm text-gray-600" htmlFor="phone">Phone number</label>
+                  <label className="text-sm text-gray-600" htmlFor="phone">
+                    Phone number
+                  </label>
                   <input
                     name="phone"
                     type="text"
@@ -544,7 +594,9 @@ function Contactsection() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm text-gray-600" htmlFor="Message">Message</label>
+                <label className="text-sm text-gray-600" htmlFor="Message">
+                  Message
+                </label>
                 <textarea
                   name="message"
                   placeholder="Hi, do you have a moment to talk about..."
@@ -552,10 +604,9 @@ function Contactsection() {
                 ></textarea>
               </div>
 
-              <button
-                className="bg-Tird_Color hover:bg-sky-500 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out flex items-center justify-between"
-              >
-                Send Message<IoSend className="mx-2" />
+              <button className="bg-Tird_Color hover:bg-sky-500 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out flex items-center justify-between">
+                Send Message
+                <IoSend className="mx-2" />
               </button>
             </form>
           </div>
@@ -571,9 +622,17 @@ function Contactsection() {
                 </div>
               </div>
               {contactLinks.map((link, index) => (
-                <a key={index} href={link.link} className="flex items-center gap-2 space-x-3">
+                <a
+                  key={index}
+                  href={link.link}
+                  className="flex items-center gap-2 space-x-3"
+                >
                   {link.icoo} {/* Render the icon */}
-                  {link.phone || link.email || link.github || link.linkedin} {/* Render phone or email */}
+                  {link.phone ||
+                    link.email ||
+                    link.github ||
+                    link.linkedin}{" "}
+                  {/* Render phone or email */}
                 </a>
               ))}
             </div>
@@ -584,18 +643,19 @@ function Contactsection() {
   );
 }
 
-
-
-function Footer () {
-  const {fullName} = MyInfo[0]
+function Footer() {
+  const { fullName } = MyInfo[0];
   return (
     <footer className="pb-20 md:pb-20 lg:py-8 mt-auto animation_scroling">
       <div className=" mx-auto px-4">
         <p className="text-center text-gray-600 text-sm">
-          Created by <a  href="" className="font-bold text-Tird_Color">{fullName}</a> © {new Date().getFullYear()}
+          Created by{" "}
+          <a href="" className="font-bold text-Tird_Color">
+            {fullName}
+          </a>{" "}
+          © {new Date().getFullYear()}
         </p>
       </div>
     </footer>
   );
-};
-
+}

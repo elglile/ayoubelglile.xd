@@ -1,4 +1,4 @@
-import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaBehance, FaFacebook, FaGithub, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
 import { assets } from "./assets/assets";
 import { BsGithub, BsInstagram } from "react-icons/bs";
 import { CiPhone } from "react-icons/ci";
@@ -12,15 +12,17 @@ export let MyInfo = [
     address: "Sidi Maarouf, Al Moustakbal, 26300, Casablanca, Morocco",
     profileImage: assets.profile,
     cvLink:
-      "https://res.cloudinary.com/diypq1cyl/image/upload/v1734697010/dakfu6hxe20wkshufqsa.pdf", // Add your CV link
+      "https://res.cloudinary.com/diypq1cyl/image/upload/v1736504541/Doc_by_ayoub_Anglais_pmp1ki.pdf", // Add your CV link
+    cvLink_Français:
+      "https://res.cloudinary.com/diypq1cyl/image/upload/v1736502693/bfva0z5tvkeqiq8xzct1.pdf", // Add your CV link
     Mylogo: assets.logo,
     MylogoG: assets.LOGO,
     socialLinks: [
       {
         id: 1,
-        Facebook: "Ayoub el Glil",
-        link: "https://www.facebook.com/share/aDjd7Aj2dbPRwP7q/?mibextid=wwXIfr", // Link to open the email client
-        icoo: <FaFacebook size={21} className="hover:text-blue-600" />,
+        github: "elglile",
+        link: "https://github.com/elglile", // GitHub profile link
+        icoo: <BsGithub size={21} className="hover:text-yellow-600" />,
       },
       {
         id: 2,
@@ -36,33 +38,39 @@ export let MyInfo = [
       },
       {
         id: 4,
-        Twitter: "ayoub_elglile_7",
-        link: "https://x.com/x_goju", // LinkedIn profile link
-        icoo: <FaXTwitter size={21} className="hover:text-black" />,
+        Behance: "ayoub_xd",
+        link: "", // LinkedIn profile link
+        icoo: <FaBehance     size={21} className="hover:text-black" />,
       },
       {
         id: 5,
-        Whatsapp: "Whatsapp",
-        link: "https://wa.me/212687-976771", // Whatsapp profile link
-        icoo: <IoLogoWhatsapp size={21} className="hover:text-green-600" />,
+        email: "ayoubelglile@gmail.com",
+        link: "https://www.facebook.com/share/aDjd7Aj2dbPRwP7q/?mibextid=wwXIfr", // Link to open the email client
+        icoo: <MdOutlineMail size={24} className="hover:text-black" />,
       },
       {
         id: 6,
-        github: "elglile",
-        link: "https://github.com/elglile", // GitHub profile link
-        icoo: <BsGithub size={21} className="hover:text-yellow-600" />,
+        phone: "+212 687-976771",
+        link: "tel:+212687976771", // Link to open the phone dialer
+        icoo: <FaPhoneAlt size={20} className="hover:text-green-600" />,
       },
       {
         id: 7,
-        phone: "+212 687-976771",
-        link: "tel:+212687976771", // Link to open the phone dialer
-        icoo: <CiPhone size={21} className="hover:text-green-900" />,
+        Whatsapp: "Whatsapp",
+        link: "https://wa.me/212687-976771", // Whatsapp profile link
+        icoo: <IoLogoWhatsapp size={22} className="hover:text-green-600" />,
       },
       {
         id: 8,
-        email: "ayoubelglile@gmail.com",
+        Facebook: "Ayoub el Glil",
         link: "https://www.facebook.com/share/aDjd7Aj2dbPRwP7q/?mibextid=wwXIfr", // Link to open the email client
-        icoo: <MdOutlineMail size={21} className="hover:text-black" />,
+        icoo: <FaFacebook size={21} className="hover:text-blue-600" />,
+      },
+      {
+        id: 9,
+        Twitter: "ayoub_elglile_7",
+        link: "https://x.com/x_goju", // LinkedIn profile link
+        icoo: <FaXTwitter size={21} className="hover:text-black" />,
       },
     ],
     careerFocus: ["Front-End Development", "Web Desiger"],

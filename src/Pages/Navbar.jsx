@@ -59,7 +59,7 @@ const Seminavbar = () => {
                     <img src={Mylogo} alt="my_logo" width={"120px"} className="max-w-20 p-0 m-0" />
                 </div>
                 <div className="flex space-x-6">
-                    {socialLinks.map((l , i )=>(<>
+                    {socialLinks.slice(0, 5).map((l , i )=>(<>
                         <a key={i} href={l.link} target="_blank" rel="noopener noreferrer" className='hover'>
                             {l.icoo}
                         </a>
