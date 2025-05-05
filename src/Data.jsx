@@ -18,9 +18,9 @@ export let MyInfo = [
     address: "Sidi Maarouf, Al Moustakbal, 26300, Casablanca, Morocco",
     profileImage: assets.profile,
     cvLink:
-      "https://res.cloudinary.com/diypq1cyl/image/upload/v1736507375/Doc_by_ayoub_Anglais_pnpi4d.pdf", // Add your CV link
+      "https://res.cloudinary.com/diypq1cyl/image/upload/v1746455565/phxybwvzpmknhv93zmpn.pdf", // Add your CV link
     cvLink_Français:
-      "https://res.cloudinary.com/diypq1cyl/image/upload/v1736507375/Doc_by_ayoub_Fran%C3%A7ais_dw22m4.pdf", // Add your CV link
+      "https://res.cloudinary.com/diypq1cyl/image/upload/v1746455565/mhvvmwm49a7dmbfuhxvh.pdf", // Add your CV link
     Mylogo: assets.logo,
     MylogoG: assets.LOGO,
     socialLinks: [
