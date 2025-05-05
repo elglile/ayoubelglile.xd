@@ -639,7 +639,7 @@ function Contactsection() {
                 >
                   {link.icoo} {/* Render the icon */}
                   {link.phone ||
-                    link.email ||
+                  
                     link.github ||
                     link.linkedin}{" "}
                   {/* Render phone or email */}

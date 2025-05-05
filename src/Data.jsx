@@ -45,13 +45,13 @@ export let MyInfo = [
       {
         id: 4,
         Behance: "ayoub_xd",
-        link: "", // LinkedIn profile link
+        link: "https://www.behance.net/ayoubelglile", // LinkedIn profile link
         icoo: <FaBehance size={21} className="hover:text-black" />,
       },
       {
         id: 5,
         email: "ayoubelglile@gmail.com",
-        link: "https://www.facebook.com/share/aDjd7Aj2dbPRwP7q/?mibextid=wwXIfr", // Link to open the email client
+        link: "https://mail.google.com/mail/?view=cm&fs=1&to=ayoubelglile@gmail.com", // Link to open the email client
         icoo: <MdOutlineMail size={24} className="hover:text-black" />,
       },
       {
