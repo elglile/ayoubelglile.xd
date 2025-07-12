@@ -39,7 +39,7 @@ export let MyInfo = [
       {
         id: 3,
         linkedin: "Ayoub El-Glile",
-        link: "https://www.linkedin.com/in/ayoub-el-glile-80a9042b2", // LinkedIn profile link
+        link: "https://www.linkedin.com/in/ayoub-el-glile", // LinkedIn profile link
         icoo: <FaLinkedin size={21} className="hover:text-blue-600" />,
       },
       {
@@ -75,7 +75,7 @@ export let MyInfo = [
       {
         id: 9,
         Twitter: "ayoub_elglile_7",
-        link: "https://x.com/x_goju", // LinkedIn profile link
+        link: "https://x.com/x_goju", // X profile link
         icoo: <FaXTwitter size={21} className="hover:text-black" />,
       }
     ],
