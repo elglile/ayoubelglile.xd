@@ -10,20 +10,20 @@ import emailjs from "@emailjs/browser";
 import { useEffect } from "react";
 import { TiExportOutline } from "react-icons/ti";
 
-export default function Fct() {
-  return (
-    <div className="select-none">
-      <Home />
-      <About />
-      <ExperienceSection />
-      <Skills />
-      <Projects />
-      <Myservices />
-      <Contactsection />
-      <Footer />
-    </div>
-  );
-}
+  export default function Fct() {
+    return (
+      <div className="select-none">
+        <Home />
+        <About />
+        <ExperienceSection />
+        <Skills />
+        <Projects />
+        <Myservices />
+        <Contactsection />
+        <Footer />
+      </div>
+    );
+  }
 
 function Home() {
   const { fullName, profileImage, cvLink, careerFocus, socialLinks , cvLink_Français } =

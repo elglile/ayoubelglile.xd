@@ -4,6 +4,8 @@ import { Navbar } from './Pages/Navbar';
 import Fct from "./Pages/Home";
 import { useEffect, useState } from "react";
 import Loading from "./Pages/Loading";
+import AdminLogin from "./Pages/Admin/Login";
+import Admin from "./Pages/Admin/Admin";
 // import { Suspense } from "react";
 
 
@@ -26,6 +28,9 @@ function App() {
           <Navbar />
           <Fct />
       </>} />
+      <Route path="/AdminLogin" element={<AdminLogin />} />
+      <Route path="/Admin" element={<Admin />} />
+
     </Routes>
   )
 }

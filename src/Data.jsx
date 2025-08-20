@@ -12,6 +12,19 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import { TbEyeShare } from "react-icons/tb";
 import { MdOutlineMail } from "react-icons/md";
 import { FiFigma } from "react-icons/fi";
+
+export let AdminAuth = {
+  // 123456 , admin@ayoub.com
+  email: "admin",
+  password: "admin", // تقدر تبدلو باش يكون أصعب
+};
+export const sampleData = {
+  totalVisitors: [12543, 13201, 11987, 14532],
+  monthlyVisitors: [2341, 2567, 2198, 2789],
+  dailyVisitors: [89, 94, 76, 102],
+  bounceRate: ['23%', '21%', '25%', '19%']
+};
+
 export let MyInfo = [
   {
     fullName: "Ayoub El-Glile",
@@ -80,7 +93,19 @@ export let MyInfo = [
       }
     ],
     careerFocus: ["Front-End Development", "Web Desiger"],
-
+      careerFocus1: [
+    { title: "Full Stack Developer", selected: 0 },
+    { title: "Backend Developer", selected: 0 },
+    { title: "UI/UX Designer", selected: 0 },
+    { title: "Mobile Developer", selected: 0 },
+    { title: "DevOps Engineer", selected: 0 },
+    { title: "Data Scientist", selected: 0 },
+    { title: "Product Manager", selected: 0 },
+    { title: "Technical Lead", selected: 0 },
+    { title: "Software Architect", selected: 0 },
+    { title: "Front-End Development (Custom)", selected: 1 },
+    { title: "Web Desiger (Custom)", selected: 1 },
+  ],
     aboutMe: [
       {
         id: 1,
@@ -95,15 +120,16 @@ export let MyInfo = [
       {
         id: 3,
         info: {
+          Age: "20",
+          Address: "Sidi Maarouf, Al Moustakbal, 26300",
           Phone: "+212 687-976771",
           Email: "ayoubelglile@gmail.com",
           From: "El-Gara, Morocco",
-          Languages: "Arabic, French, English , German (Basic)",
+          Languages: ["Arabic", "French", "English", "German (Basic)"],
         },
       },
       {
-        paragraph:
-          "strengths       :Adaptability, Continuous learning, Organizational skills",
+          strengths: ["Adaptability", "Continuous learning", "Organizational skills"],
       },
     ],
 

@@ -21,10 +21,11 @@ import Python from "./Python.png";
 import react from "./react.png";
 import tailwind from "./tailwind.png";
 import LOGO from "./LOGO.gif";
+import Security from "./Security.png";
 
 
 export const assets={
-    logo,  profile , Hand , AboutUs ,  bg9  , LOGO
+    logo,  profile , Hand , AboutUs ,  bg9  , LOGO, Security
 
     ,Bootstrap, Css3, Docker, Git, Gitlab, Html5, Jquery, js, Kubernetes, mongodb, mysql, Nodejs, Python, react, tailwind
 }
