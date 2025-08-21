@@ -128,7 +128,7 @@ function Home() {
             <img
               src={profileImage}
               alt={fullName}
-              className="md:w-[350px] w-[250px]"
+              className="md:w-[220px] w-[150px] py-7"
             />
           </div>
         </div>
