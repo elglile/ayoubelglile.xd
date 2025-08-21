@@ -103,8 +103,8 @@
       { title: "Product Manager", selected: 0 },
       { title: "Technical Lead", selected: 0 },
       { title: "Software Architect", selected: 0 },
-      { title: "Front-End Development (Custom)", selected: 1 },
-      { title: "Web Desiger (Custom)", selected: 1 },
+      { title: "Front-End Development ", selected: 1 },
+      { title: "Web Desiger", selected: 1 },
     ],
       aboutMe: [
         {

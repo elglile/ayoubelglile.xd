@@ -1738,72 +1738,90 @@ const LogosUpdate = ({ isEditing, onSave, onCancel }) => {
     onCancel();
   };
 
-  /* ------------- render ------------- */
-  return (
-    <div className="bg-white rounded-lg border border-gray-200">
-      <div className="p-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Static */}
-          <div className="border border-gray-200 rounded-lg p-4">
-            <h3 className="font-semibold mb-2">Static Logo</h3>
-            <div className="w-32 h-32 mx-auto bg-gray-100 rounded-lg flex items-center justify-center mb-3">
-              {myLogo ? (
-                <img src={myLogo} alt="Static" className="w-full h-full object-contain rounded-md" />
-              ) : (
-                <span className="text-sm text-gray-400">No logo</span>
-              )}
-            </div>
-            {isEditing && (
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleFile('Mylogo')}
-                className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-gray-50 file:text-gray-700 hover:file:bg-gray-100"
-              />
-            )}
-          </div>
+/* ------------- render ------------- */
+return (
+  <div className="bg-white rounded-lg border border-gray-200">
+    <div className="p-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Static Logo */}
+        <div className="border border-gray-200 rounded-lg p-4">
+          <h3 className="font-semibold mb-2">Static Logo</h3>
 
-          {/* Animated */}
-          <div className="border border-gray-200 rounded-lg p-4">
-            <h3 className="font-semibold mb-2">Animated Logo</h3>
-            <div className="w-32 h-32 mx-auto bg-gray-100 rounded-lg flex items-center justify-center mb-3">
-              {myLogoG ? (
-                <img src={myLogoG} alt="Animated" className="w-full h-full object-contain rounded-md" />
-              ) : (
-                <span className="text-sm text-gray-400">No logo</span>
-              )}
-            </div>
-            {isEditing && (
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleFile('MylogoG')}
-                className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-gray-50 file:text-gray-700 hover:file:bg-gray-100"
+          {/* clickable image OR placeholder */}
+          <label
+            htmlFor="staticLogoFile"
+            className="block w-32 h-32 mx-auto bg-gray-100 rounded-lg flex items-center justify-center mb-3 cursor-pointer hover:ring-2 hover:ring-blue-400 transition"
+          >
+            {myLogo ? (
+              <img
+                src={myLogo}
+                alt="Static"
+                className="w-full h-full object-contain rounded-md pointer-events-none"
               />
+            ) : (
+              <span className="text-sm text-gray-400">No logo</span>
             )}
-          </div>
+          </label>
+
+          {/* hidden file input */}
+          <input
+            id="staticLogoFile"
+            type="file"
+            accept="image/*"
+            onChange={handleFile('Mylogo')}
+            className="hidden"
+          />
         </div>
 
-        {/* Save / Cancel */}
-        {isEditing && (
-          <div className="flex gap-3 mt-6 border-t pt-4">
-            <button
-              onClick={handleSave}
-              className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
-            >
-              Save Changes
-            </button>
-            <button
-              onClick={handleCancel}
-              className="border border-gray-300 px-4 py-2 rounded-md hover:bg-gray-50"
-            >
-              Cancel
-            </button>
-          </div>
-        )}
+        {/* Animated Logo */}
+        <div className="border border-gray-200 rounded-lg p-4">
+          <h3 className="font-semibold mb-2">Animated Logo</h3>
+
+          <label
+            htmlFor="animatedLogoFile"
+            className="block w-32 h-32 mx-auto bg-gray-100 rounded-lg flex items-center justify-center mb-3 cursor-pointer hover:ring-2 hover:ring-blue-400 transition"
+          >
+            {myLogoG ? (
+              <img
+                src={myLogoG}
+                alt="Animated"
+                className="w-full h-full object-contain rounded-md pointer-events-none"
+              />
+            ) : (
+              <span className="text-sm text-gray-400">No logo</span>
+            )}
+          </label>
+
+          <input
+            id="animatedLogoFile"
+            type="file"
+            accept="image/*"
+            onChange={handleFile('MylogoG')}
+            className="hidden"
+          />
+        </div>
       </div>
+
+      {/* Save / Cancel */}
+      {isEditing && (
+        <div className="flex gap-3 mt-6 border-t pt-4">
+          <button
+            onClick={handleSave}
+            className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+          >
+            Save Changes
+          </button>
+          <button
+            onClick={handleCancel}
+            className="border border-gray-300 px-4 py-2 rounded-md hover:bg-gray-50"
+          >
+            Cancel
+          </button>
+        </div>
+      )}
     </div>
-  );
+  </div>
+);
 };
 
 

@@ -26,9 +26,10 @@ import { TiExportOutline } from "react-icons/ti";
   }
 
 function Home() {
-  const { fullName, profileImage, cvLink, careerFocus, socialLinks , cvLink_Français } =
+  const { fullName, profileImage, cvLink, careerFocus1, socialLinks , cvLink_Français } =
     MyInfo[0];
-
+    // keep only the titles whose selected === 1
+  const activeCareers = careerFocus1.filter(c => c.selected === 1).map(c => c.title);
   return (
     <>
       <div className="w-full lg:h-screen pb-20 animation_scroling " id="Home">
@@ -53,23 +54,23 @@ function Home() {
               </h1>
               <h1 className="text-black">{fullName}</h1>
               <div className="text-Tird_Color">
-                <TypeAnimation
-                  sequence={[
-                    ...careerFocus.flatMap((focus) => [focus, 1000]), // Dynamically add each focus and wait time
-                  ]}
-                  wrapper="span"
-                  speed={50}
-                  style={{
-                    fontSize: "1.5rem",
-                    display: "inline-block",
-                    width: "100%",
-                    whiteSpace: "nowrap",
-                    fontFamily: "monospace",
-                    overflow: "hidden",
-                    letterSpacing: "1px",
-                  }}
-                  repeat={Infinity}
-                />
+              <TypeAnimation
+                      sequence={[
+                        ...activeCareers.flatMap(title => [title, 1000]),
+                      ]}
+                      wrapper="span"
+                      speed={50}
+                      style={{
+                        fontSize: "1.5rem",
+                        display: "inline-block",
+                        width: "100%",
+                        whiteSpace: "nowrap",
+                        fontFamily: "monospace",
+                        overflow: "hidden",
+                        letterSpacing: "1px",
+                      }}
+                      repeat={Infinity}
+                    />
               </div>
               </div>
 
