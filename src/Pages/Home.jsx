@@ -128,7 +128,7 @@ function Home() {
             <img
               src={profileImage}
               alt={fullName}
-              className="md:w-[220px] w-[150px] py-7"
+              className="md:w-[250px] w-[220px] md:py-20 py-12 "
             />
           </div>
         </div>
@@ -289,8 +289,9 @@ function Projects() {
               >
                 <div className="relative">
                   <img
+                  // absolute hia li kant kt5ali tsawr it7aydo f la forme tele
                     src={project.image_src || assets.bg9}
-                    className="col-span-2 md:col-span-1 p-1 rounded-xl absolute inset-0  w-full h-full object-cover object-center transition duration-500 hover:scale-105"
+                    className="col-span-2 md:col-span-1 p-1 rounded-xl  inset-0  w-full h-full object-cover object-center transition duration-500 hover:scale-105"
                     alt="Image does not apply"
                   />
                   <div className="absolute top-2 right-2 flex-col flex items-baseline justify-center space-x-2">

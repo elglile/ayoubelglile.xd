@@ -29,7 +29,7 @@
     {
       fullName: "Ayoub El-Glile",
       address: "Sidi Maarouf, Al Moustakbal, 26300, Casablanca, Morocco",
-      profileImage: "https://res.cloudinary.com/diypq1cyl/image/upload/v1755714344/profil_2025-removebg-preview_swfq3r.png",
+      profileImage: "https://res.cloudinary.com/diypq1cyl/image/upload/v1755767644/Untitled_designprofile_m7oe6v.png",
       cvLink:
         "https://res.cloudinary.com/diypq1cyl/image/upload/v1755762363/Doc_by_ayoub_Anglais_Org_xgdlm2.pdf", // Add your CV link
       cvLink_Français:
