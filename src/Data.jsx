@@ -28,7 +28,6 @@
   export let MyInfo = [
     {
       fullName: "Ayoub El-Glile",
-      address: "Sidi Maarouf, Al Moustakbal, 26300, Casablanca, Morocco",
       profileImage: "https://res.cloudinary.com/diypq1cyl/image/upload/v1755767644/Untitled_designprofile_m7oe6v.png",
       cvLink:
         "https://res.cloudinary.com/diypq1cyl/image/upload/v1755762363/Doc_by_ayoub_Anglais_Org_xgdlm2.pdf", // Add your CV link
@@ -121,7 +120,7 @@
           id: 3,
           info: {
             Age: "20",
-            Address: "Sidi Maarouf, Al Moustakbal, 26300",
+            Address: "FERME CHAUIA EL GARA BERRECHID, 26300 , Morocco",
             Phone: "+212 687-976771",
             Email: "ayoubelglile@gmail.com",
             From: "El-Gara, Morocco",
