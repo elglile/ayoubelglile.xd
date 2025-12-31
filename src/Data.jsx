@@ -16,7 +16,7 @@
   export let AdminAuth = {
     // 123456 , admin@ayoub.com
     email: "admin",
-    password: "admin", // تقدر تبدلو باش يكون أصعب
+    password: "admin", 
   };
   export const sampleData = {
     totalVisitors: [12543, 13201, 11987, 14532],
@@ -421,6 +421,44 @@
               "https://res.cloudinary.com/diypq1cyl/image/upload/v1734825749/qz2csfjfhsmyijhxv7oa.png",
             language3:
               "https://res.cloudinary.com/diypq1cyl/image/upload/v1736508852/gfopdthhcxntnxtovq64.png",
+          },
+        },
+        {
+          id: 4,
+          Dashbord_web_App_name: "Personal Portfolio",
+          image_src:
+            "https://res.cloudinary.com/diypq1cyl/image/upload/v1767189667/Portfolio1_rtwxgf.png",
+          description:
+            "A platform to present my online portfolio and showcase my skills, projects and services.",
+          Gitlink: {
+            src: (
+              <FaGithub
+                size={28}
+                className="text-black hover:text-orange-600 transition duration-500 "
+              />
+            ),
+            link: "https://github.com/elglile/Portfolio.1",
+          },
+          dimolink: {
+            src: (
+              <TbEyeShare
+                size={28}
+                className="hover:text-Tird_Color hover:rounded-xl transition duration-500 ease-in-out  "
+              />
+            ),
+            link: "https://elglile.github.io/Portfolio.1/",
+          },
+          Figmalink: {
+            src: '',
+            link: "",
+          },
+          languages_prog: {
+            language1:
+              "https://res.cloudinary.com/diypq1cyl/image/upload/v1767189895/nextjs_icon_132160_z5dsn6.png",
+            language2:
+              "https://res.cloudinary.com/diypq1cyl/image/upload/v1767189957/tailwindcss_logo_icon_167923_i9glvw.png",
+            // language3:
+            //   "https://res.cloudinary.com/diypq1cyl/image/upload/v1736508852/gfopdthhcxntnxtovq64.png",
           },
         },
       ],
