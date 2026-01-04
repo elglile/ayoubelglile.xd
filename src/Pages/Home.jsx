@@ -7,8 +7,8 @@ import { Code, Palette, Building2, MapPin } from "lucide-react";
 import { MdReviews } from "react-icons/md";
 import { IoSend } from "react-icons/io5";
 import emailjs from "@emailjs/browser";
-import { useEffect } from "react";
 import { TiExportOutline } from "react-icons/ti";
+import toast from "react-hot-toast";
 
   export default function Fct() {
     return (
@@ -49,7 +49,7 @@ function Home() {
             <p className="ms:mx-52 text-center md:my-24 space-y-6 block w-[100%] ">
               <div>
                 <h1 className="text-black">
-                Hello <span className="text-Tird_Color"> I'm</span>
+                Hello <span className="text-Tird_Color">I&apos;m</span>
                 <br />
               </h1>
               <h1 className="text-black">{fullName}</h1>
@@ -447,63 +447,48 @@ function Myservices() {
 }
 
 function Contactsection() {
-  const { address } = MyInfo[0];
+  const  address = MyInfo[0].aboutMe[2].info.Address;
   const contactLinks = MyInfo[0].socialLinks.filter(
     (item) => item.phone || item.email || item.github || item.linkedin
   );
-  const [alert, setAlert] = useState({ type: "", message: "" });
+
   const formRef = useRef(null);
 
-  const Send_a_Msg = (el) => {
-    el.preventDefault();
+const Send_a_Msg = (el) => {
+  el.preventDefault();
 
-    // Form validation: check if any input is empty
-    const formData = new FormData(el.target);
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const company = formData.get("Company");
-    const phone = formData.get("phone");
-    const message = formData.get("message");
+  const formData = new FormData(el.target);
+  const name = formData.get("name");
+  const email = formData.get("email");
+  const company = formData.get("Company");
+  const phone = formData.get("phone");
+  const message = formData.get("message");
 
-    if (!name || !email || !company || !phone || !message) {
-      setAlert({ type: "error", message: "Please fill in all fields!" });
-      return;
-    }
+  if (!name || !email || !company || !phone || !message) {
+    toast.error("All fields are required. Please complete the form.");
+    return;
+  }
 
-    // If all fields are filled, send the form via EmailJS
-    emailjs
-      .sendForm(
-        "service_16uwo9c",
-        "template_yhc72ga",
-        el.target,
-        "a0CnnUiBM6l-p9V4q"
-      )
-      .then(
-        (result) => {
-          console.log("Message sent:", result.text);
-          setAlert({ type: "success", message: "Message sent successfully!" });
-          formRef.current.reset(); // Clear the form inputs
-        },
-        (error) => {
-          console.error("Error sending message:", error.text);
-          setAlert({
-            type: "error",
-            message: "Failed to send the message. Please try again!",
-          });
-        }
-      );
-  };
+  toast.loading("Sending message...", { id: "send" });
 
-  // Automatically remove alert after 2 seconds
-  useEffect(() => {
-    if (alert.message) {
-      const timer = setTimeout(() => {
-        setAlert({ type: "", message: "" });
-      }, 2000); // Alert disappears after 2 seconds
+  emailjs
+    .sendForm(
+      "service_16uwo9c",
+      "template_yhc72ga",
+      el.target,
+      "a0CnnUiBM6l-p9V4q"
+    )
+    .then(() => {
+      toast.success("Message sent successfully!", { id: "send" });
+      formRef.current.reset();
+    })
+    .catch(() => {
+      toast.error("Failed to send message. Try again later.", {
+        id: "send",
+      });
+    });
+};
 
-      return () => clearTimeout(timer); // Clean up the timeout when the component is unmounted or alert changes
-    }
-  }, [alert]);
 
   return (
     <div
@@ -528,28 +513,6 @@ function Contactsection() {
             </h2>
 
             {/* Alert Messages */}
-            {alert.message && (
-              <div
-                className={` text-sm font-bold p-2 rounded-lg border-[2px] 
-                  fixed flex justify-between items-center
-                  w-52 top-24 left-4 right-1
-                  md:top-32
-                  lg:px-3 lg:w-72 lg:top-24 lg:left-4 lg:right-4 lg:mb-4 ${
-                    alert.type === "success"
-                      ? "bg-green-100 text-green-800 border-green-800"
-                      : "bg-red-100 text-red-800 border-red-800"
-                  }`}
-              >
-                {alert.message}
-                <span
-                  className="ml-2 cursor-pointer"
-                  onClick={() => setAlert({ type: "", message: "" })}
-                >
-                  x
-                </span>
-              </div>
-            )}
-
             <form
               className="space-y-6 contact_form"
               onSubmit={Send_a_Msg}
@@ -628,9 +591,9 @@ function Contactsection() {
             <h2 className="text-xl font-semibold mb-6">Contact Information</h2>
             <div className="space-y-6">
               <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 mt-0.5" />
+                <MapPin className="w-5 h-5 mt-0.5" size={21} />
                 <div>
-                  <p>{address}</p>
+                  <p className="text-sm">{address}</p>
                 </div>
               </div>
               {contactLinks.map((link, index) => (

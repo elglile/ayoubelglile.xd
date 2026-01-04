@@ -5,13 +5,13 @@
     FaLinkedin,
     FaPhoneAlt,
   } from "react-icons/fa";
-  import { assets } from "./assets/assets";
+  // import { assets } from "./assets/assets";
   import { BsGithub, BsInstagram } from "react-icons/bs";
   import { FaXTwitter } from "react-icons/fa6";
   import { IoLogoWhatsapp } from "react-icons/io";
   import { TbEyeShare } from "react-icons/tb";
   import { MdOutlineMail } from "react-icons/md";
-  import { FiFigma } from "react-icons/fi";
+  // import { FiFigma } from "react-icons/fi";
 
   export let AdminAuth = {
     // 123456 , admin@ayoub.com
@@ -52,7 +52,7 @@
           id: 3,
           linkedin: "Ayoub El-Glile",
           link: "https://www.linkedin.com/in/ayoub-el-glile", // LinkedIn profile link
-          icoo: <FaLinkedin size={21} className="hover:text-blue-600" />,
+          icoo: <FaLinkedin size={21} className="hover:text-blue-200" />,
         },
         {
           id: 4,
@@ -305,6 +305,13 @@
           name: "Docker",
           src: "https://res.cloudinary.com/diypq1cyl/image/upload/v1734825747/ugnxwnzhomfbozlvink8.png",
           type: "Tool",
+          desc: "Lorem ipsum dolor sit amet consectetur.",
+        },
+        {
+          id: 20,
+          name: "Next",
+          src: "https://res.cloudinary.com/diypq1cyl/image/upload/v1767189895/nextjs_icon_132160_z5dsn6.png",
+          type: "Frontend",
           desc: "Lorem ipsum dolor sit amet consectetur.",
         },
       ],

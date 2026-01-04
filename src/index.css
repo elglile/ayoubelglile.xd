@@ -5,6 +5,11 @@ html::-webkit-scrollbar {
 html::-webkit-scrollbar-thumb {
   @apply bg-Tird_Color border-8  border-slate-500 rounded-lg
   }
+
+html {
+  scroll-behavior: smooth;
+}
+
   
   html::-webkit-scrollbar-track {
     @apply bg-transparent rounded-lg

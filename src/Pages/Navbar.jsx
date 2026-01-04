@@ -1,24 +1,24 @@
 import { FaEnvelope, FaFileAlt,  FaLaptopCode,  FaTools, FaUser } from "react-icons/fa";
 import { ImHome } from "react-icons/im";
-import { Router } from "react-router-dom";
+// import { Router } from "react-router-dom";
 import { SiHyperskill } from "react-icons/si";
 import { MyInfo } from "../Data";
 
-export const Navdata = [
+const Navdata = [
     { name: 'Home', path: '#Home', icon: <ImHome /> },
     { name: 'About', path: '#About', icon: <FaUser /> },
-    { name: 'Skills', path: '/#Skills', icon: <SiHyperskill />    },
-    { name: 'Projects', path: '/#Projects', icon: <FaLaptopCode /> },
+    { name: 'ExperienceSection', path: '#ExperienceSection', icon: <FaFileAlt /> },
+    { name: 'Skills', path: '#Skills', icon: <SiHyperskill />    },
+    { name: 'Projects', path: '#Projects', icon: <FaLaptopCode /> },
   
-    { name: 'ExperienceSection', path: '/#ExperienceSection', icon: <FaFileAlt /> },
-    { name: 'services', path: '/#services', icon:<FaTools />},
-        { name: 'Home', path: '/#Contact', icon: <FaEnvelope /> },
+    { name: 'services', path: '#services', icon:<FaTools />},
+    { name: 'Contact', path: '#Contact', icon: <FaEnvelope /> },
   
 ]
 
 
 const Navbar = () => {
-    const pathname = Router.pathname;
+    // const pathname = Router.pathname;
     return (
         <>
             <nav
@@ -32,14 +32,31 @@ const Navbar = () => {
                     backdrop-blur-3xl  text-2xl xl:text-sm xl:rounded-full shadow-2xl"
                 >
                     {Navdata.map((a, i) => {
-                        return <a
-                            className={`${a.path === pathname && 'active:text-slate-900'} hover:text-blue-900`}
-                            href={a.path}
-                            key={i}
+                    return (
+                        <a
+                        key={i}
+                        href={a.path}
+                        className="relative group hover:text-blue-900"
                         >
-                            <div>{a.icon}</div>
-                        </a>;
+                        <div>{a.icon}</div>
+
+                        {/* Tooltip */}
+                        <span
+                            className="
+                            absolute right-10 top-1/2 -translate-y-1/2
+                            bg-blue-400 text-white text-xs px-2 py-1 rounded-md
+                            opacity-0 group-hover:opacity-100
+                            translate-x-2 group-hover:translate-x-0
+                            transition-all duration-300
+                            whitespace-nowrap
+                            "
+                        >
+                            {a.name}
+                        </span>
+                        </a>
+                    );
                     })}
+
                 </div>
             </nav>
         </>
