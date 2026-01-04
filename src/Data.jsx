@@ -32,7 +32,7 @@
       cvLink:
         "https://res.cloudinary.com/diypq1cyl/image/upload/v1755762363/Doc_by_ayoub_Anglais_Org_xgdlm2.pdf", // Add your CV link
       cvLink_Français:
-        "https://res.cloudinary.com/diypq1cyl/image/upload/v1755762364/Doc_by_ayoub_Fran%C3%A7ais_Org_k7n6kp.pdf", // Add your CV link
+        "https://res.cloudinary.com/diypq1cyl/image/upload/v1767557879/Doc_by_ayoub_Fran%C3%A7ais_Org_k7n6kp.pdf", // Add your CV link
       Mylogo: "https://res.cloudinary.com/diypq1cyl/image/upload/v1755714583/logo_rn89sn.svg",
       MylogoG: "https://res.cloudinary.com/diypq1cyl/image/upload/v1755714583/LOGO_w9ay2u.gif",
       socialLinks: [
