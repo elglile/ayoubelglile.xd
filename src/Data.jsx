@@ -91,7 +91,8 @@
           icoo: <FaXTwitter size={21} className="hover:text-black" />,
         }
       ],
-      careerFocus: ["Front-End Development", "Web Desiger"],
+      // careerFocus: ["Front-End Development", "Web Desiger"],
+      careerFocus: ["Front-End Developer", "Web Designer"],
         careerFocus1: [
       { title: "Full Stack Developer", selected: 0 },
       { title: "Backend Developer", selected: 0 },
