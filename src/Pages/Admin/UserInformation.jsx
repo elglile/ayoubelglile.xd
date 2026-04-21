@@ -138,7 +138,7 @@ const getCurrentAboutData = (isEditing, tempAboutData, aboutMe) => {
     phone: aboutMe[2].info.Phone,
     email: aboutMe[2].info.Email,
     from: aboutMe[2].info.From,
-    languages: aboutMe[2].info.Languages,
+    // languages: aboutMe[2].info.Languages,
     strengths: aboutMe[3].strengths
   };
 };
