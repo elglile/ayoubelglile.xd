@@ -36,7 +36,7 @@ function Home() {
         <Seminavbar />
         <div
           className="h-full grid grid-cols-2 lg:px-[100px] 
-                        pt-24 md:pt-20 lg:pt-20 
+                        pt-24 md:pt-20 lg:pt-20 lg:items-center
                         lg:w-[76%] mx-auto
                         "
         >
