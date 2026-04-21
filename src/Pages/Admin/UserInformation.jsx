@@ -32,7 +32,7 @@ const handlePersonalSave = (tempCareerFocus1, setOriginalData, onSave) => {
   const selectedTitles = tempCareerFocus1
     .filter(item => item.selected === 1)
     .map(item => item.title);
-  MyInfo[0].careerFocus = selectedTitles;
+  // MyInfo[0].careerFocus = selectedTitles;
   
   setOriginalData(null);
   onSave();
@@ -49,7 +49,7 @@ const handlePersonalCancel = (originalData, setTempCareerFocus1, setOriginalData
     const selectedTitles = originalData.careerFocus1
       .filter(item => item.selected === 1)
       .map(item => item.title);
-    MyInfo[0].careerFocus = selectedTitles;
+    // MyInfo[0].careerFocus = selectedTitles;
     
     setTempCareerFocus1(originalData.careerFocus1.map(item => ({ ...item })));
     setOriginalData(null);
