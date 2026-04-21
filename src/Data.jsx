@@ -124,7 +124,7 @@
             Phone: "+212 687-976771",
             Email: "ayoubelglile@gmail.com",
             From: "El-Gara, Morocco",
-            Languages: ["Arabic", "French", "English", "German (A2)"],
+            Languages: ["Arabic ,", "French ,", "English ,", "German (A2)"],
           },
         },
         {
