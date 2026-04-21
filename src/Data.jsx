@@ -134,6 +134,13 @@
 
       Myexperiences: [
         {
+  title: "Professional Experience : Frontend Developer",
+  company: "Dieze Center | Berrechid, Morocco",
+  period: "10/2025 – Present",
+  description: "Collaborated with the development team to implement frontend features. Analyzed and fixed bugs and technical issues in existing projects. Implemented tasks assigned by the project manager according to project requirements.",
+  align: "right",
+},
+        {
           title: "Related training",
           company: "ODC Club Sidi Maarouf and Ben M’Sick",
           period: "26-27 August | 28-30 August | 13-15 November",
