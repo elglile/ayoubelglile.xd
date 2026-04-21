@@ -161,7 +161,7 @@
           company: "ISTA 2 Settat | Morocco",
           period: "2022 - 2024",
           description:
-            "Diplôme de Technicien Spécialisé en Développement Digital - Front-end, Back-end, and Web Design. Final year project: Front-end development of a website.",
+            "Diploma in Digital Development - Front-end, Back-end, and Web Design. Final-year project: Front-end development of a website.",
           align: "right",
         },
       ],
